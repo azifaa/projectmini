@@ -20,7 +20,7 @@ body {
     <div class="card mt-5 w-50 justify-content-center mx-auto bg-transparent">
       <h5 class="card-header mx-auto text-white text-bold">Register</h5>
       <div class="card-body">
-        <form action="connect_register.php" method="post">
+        <form action="connect_login.php" method="post">
           <div class="mb-2">
             <label for="exampleInputName" class="form-label text-white text-bold " placeholder="Nama">Nama</label>
             <input name="nama" type="nama" class="form-control" id="exampleInputName" placeholder="Nama" >
@@ -29,9 +29,6 @@ body {
           <label for="exampleInputUserName" class="form-label text-white text-bold " placeholder="User Name" >User Name</label>
           <input name="username" type="username" class="form-control" id="exampleInputUserName" placeholder="username">
         </div>
-          <div class="mb-2">
-            <label for="exampleInputgender" class="form-label text-white text-bold " placeholder="Gender" >Gender</label>
-            <input name="gender" type="gender" class="form-control" id="exampleInputGender" placeholder="gender">
           <div class="mb-2">
             <label for="exampleInputEmail1" class="form-label text-white text-bold " placeholder="Email Address" >Email address</label>
             <input name="email" type="email" class="form-control" id="exampleInputEmail1" placeholder="Input your Email" aria-describedby="emailHelp">

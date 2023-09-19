@@ -29,6 +29,29 @@ class Admin extends CI_Controller
         $data['kelas'] = $this->m_model->get_data('kelas')->result();
         $this->load->view('admin/tambah_siswa',$data);
     }
+    public function guru()
+    {
+        $data['guru'] = $this->m_model->get_data('guru')->result();
+        $this->load->view('admin/guru', $data);
+    }
+    public function tambah_guru()
+    {
+        $data['guru'] = $this->m_model->get_data('guru')->result();
+        $this->load->view('admin/tambah_guru',$data);
+    }
+    public function aksi_tambah_guru()
+    {
+        $data = [
+            'nama_guru' => $this->input->post('nama'),
+            'nik' => $this->input->post('nik'),
+            'gender' => $this->input->post('gender'),
+            'id_mapel' => $this->input->post('mapel'),
+           
+        ];
+
+        $this->m_model->tambah_data('guru', $data);
+        redirect(base_url('admin/guru'));
+    }
 
 
     public function aksi_tambah_siswa()
@@ -75,5 +98,37 @@ class Admin extends CI_Controller
         $this->m_model->delete('siswa', 'id_siswa', $id);
         redirect(base_url('admin/siswa'));
     }
+    public function ubah_guru($id)
+    {
+        $data['guru']=$this->m_model->get_by_id('guru', 'id_guru', $id)->result();
+        $data['mapel']=$this->m_model->get_data('mapel')->result();
+        $this->load->view('admin/ubah_guru', $data);
+    }
+    public function aksi_ubah_guru()
+    {
+        $data = array (
+            'nama_guru' => $this->input->post('nama'),
+            'nik' => $this->input->post('nik'),
+            'gender' => $this->input->post('gender'),
+            'id_mapel' => $this->input->post('id_mapel'),
+        );
+        $eksekusi=$this->m_model->ubah_data
+        ('guru', $data, array('guru'=>$this->input->post('guru')));
+        if($eksekusi)
+        {
+            $this->session->set_flashdata('sukses', 'berhasil');
+            redirect(base_url('admin/guru'));
+        }else
+        {
+            $this->session->set_flashdata('error', 'gagal..');
+            redirect(base_url('admin/guru/ubah_guru/'.$this->input->post('guru')));
+        }
+    }
+
+    public function hapus_guru($id) 
+ { 
+     $this->m_model->delete('guru', 'id_guru', $id); 
+     redirect(base_url('admin/guru')); 
+ }
 }
 ?>
