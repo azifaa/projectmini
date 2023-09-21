@@ -106,6 +106,7 @@
                                     <th scope="col">Nama </th>
                                     <th scope="col">NIK </th>
                                     <th scope="col">Gender </th>
+                                    <th scope="col">Mapel </th>
                                     <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
@@ -126,9 +127,10 @@
                                         <td>
                                             <?php echo $row->gender ?>
                                         </td>
+                                        <td>  <?php echo tampil_full_mapel_byid($row->id_mapel)?></td>
                                         <td class="text-center">
                                             <a href="<?php echo base_url('admin/ubah_guru/') . $row->id_guru ?>"
-                                                class="btn btn-sm btn-primary">Ubah</a>
+                                                class="btn btn-sm btn-primary">Update</a>
                                                 <button onClick="hapus (<?php echo $row->id_guru ?>)" class="btn btn-sm btn-danger">Delete
                                             </button>
                                         </td>

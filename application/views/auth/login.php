@@ -3,7 +3,7 @@
 <head>
   <style>
 body { 
-        background-image: url("https://wallpapercave.com/wp/wp5055792.jpg"); 
+        background-image: url("https://marketplace.canva.com/EAFTs1OGGP0/1/0/1600w/canva-blue-fluid-abstract-texture-zoom-virtual-background-EctRADuXsoI.jpg"); 
     }
     </style>
     <meta charset="UTF-8">

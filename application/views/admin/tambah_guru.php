@@ -38,7 +38,21 @@
                              <option value="Laki-Laki">Laki-Laki</option> 
                              <option value="Perempuan">Perempuan</option> 
                          </select> 
-                     </div> 
+                     </div>
+                     <div class="mb-3 col-6"> 
+ 
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="mapel"> 
+                            Mapel 
+                        </label> 
+                        <select name="mapel" id="mapel" 
+                            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"> 
+                            <option selected>Pilih Mapel</option> 
+                            <?php foreach($mapel as $row): ?> 
+                            <option value="<?php echo $row->id ?>"> 
+                                <?php echo $row->nama_mapel ?></option> 
+                            <?php endforeach ?> 
+                        </select> 
+                    </div>
                      <button type="submit" 
                          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded w-2/6"> 
                          Tambah 

@@ -127,24 +127,29 @@
                                         <td>
                                             <?php echo $row->gender ?>
                                         </td>
-                                        <td>  <?php echo tampil_full_kelas_byid($row->id_kelas) ?></td>
+                                        <td>
+                                            <?php echo tampil_full_kelas_byid($row->id_kelas) ?>
+                                        </td>
                                         <td class="text-center">
-                                            <a href="<?php echo base_url('admin/ubah_siswa/').$row->id_siswa?>" class="btn btn-sm btn-primary">Ubah</a>
-                                            <button onClick="hapus (<?php echo $row->id_siswa ?>)" class="btn btn-sm btn-danger">Delete
+                                            <a href="<?php echo base_url('admin/ubah_siswa/') . $row->id_siswa ?>"
+                                                class="btn btn-sm btn-primary">Ubah</a>
+                                            <button onClick="hapus (<?php echo $row->id_siswa ?>)"
+                                                class="btn btn-sm btn-danger">Delete
                                             </button>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
                             </tbody>
                         </table>
-                        <a href="<?php echo base_url('admin/tambah_siswa')?>"><button class="btn btn-sm btn-warning">Tambah</button></a>
+                        <a href="<?php echo base_url('admin/tambah_siswa') ?>"><button
+                                class="btn btn-sm btn-warning">Tambah</button></a>
                     </div>
                     </form>
                     <script>
                         function hapus(id) {
                             var yes = confirm("Yakin Nieh Di Hapus?")
                             if (yes === true) {
-                                window.location.href = "<?php echo base_url('admin/hapus_siswa/')?>" + id;
+                                window.location.href = "<?php echo base_url('admin/hapus_siswa/') ?>" + id;
                             }
                         }
                     </script>

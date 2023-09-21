@@ -26,13 +26,13 @@
     
     <!-- container --> 
     <div class="container text-center text-white text-bold">
-    <h1 style="text-align: center; color:white;">𝐏𝐄𝐍𝐃𝐀𝐅𝐓𝐀𝐑𝐀𝐍</h1> 
+        <h1 style="text-align: center; color:white;">Welcome To School</h1> 
         <img src="https://binusasmg.sch.id/ppdb/logobinusa.png" alt="image" height="200px" width="200px" > 
         <h1 sytle="">Smk Bina Nusantara</h1>  
         <form action="register.php" method="post">
             <a href="./auth/register" type="submit" class="btn btn-danger text-bg-info">REGISTER</a>
         <form action="login.php" method="post">
-            <a href="./auth" type="submit" class="btn btn-warning text-bg-info">LOGIN</a>
+            <a href="./auth" type="submit" class="btn btn-warning text-bg-info ml-3">LOGIN</a>
             </div>     
 </div> 
 </body> 
