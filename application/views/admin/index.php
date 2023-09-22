@@ -117,7 +117,9 @@
             <div class="col-3 card p-2">
                 <div class="card-body">
                     <p>Jumlah Siswa</p>
-                    <h2>7</h2>
+                    <h2>
+                        <?php echo $kelas ?>
+                    </h2>
                     <a href="#" class="btn btn-warning d-grid gap-2">Data Lengkap</a>
                 </div>
             </div>
@@ -125,7 +127,9 @@
             <div class="col-3 card p-2">
                 <div class="card-body">
                     <p>Jumlah Guru</p>
-                    <h2>2</h2>
+                    <h2>
+                        <?php echo $guru ?>
+                    </h2>
                     <a href="#" class="btn btn-warning d-grid gap-2">Data Lengkap</a>
                 </div>
             </div>

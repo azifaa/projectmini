@@ -45,47 +45,37 @@ public function register() {
   $this->load->view('auth/register'); 
 } 
 
-public function aksi_register() { 
-  $email    = $this->input->post('email', true); 
-  $username = $this->input->post('username', true); 
-  $password = $this->input->post('password', true);
+public function aksi_register() 
+    { 
+        $this->load->library('form_validation'); 
+        
 
-  // Check if the password length is at least 8 characters
-  if (strlen($password) < 8) {
-      // Password is too short, redirect back to registration
-      redirect(base_url() . "auth/register");
-  }
-
-  // Hash the password
-  $hashed_password = md5($password);
-
-  $data = [ 
-      'email'    => $email, 
-      'username' => $username, 
-      'password' => $hashed_password, 
-      'role'     => 'admin', 
-  ]; 
-
-  $table = 'admin'; 
-
-  $this->db->insert($table, $data); 
-
-  if ($this->db->affected_rows() > 0) { 
-      // Registration successful 
-      $this->session->set_userdata([ 
-          'logged_in' => TRUE, 
-          'email' => $email, 
-          'username' => $username, 
-          'role' => 'admin' 
-      ]); 
-
-      redirect(base_url() . "admin"); 
-  } else { 
-      // Registration failed 
-      redirect(base_url() . "auth/register"); 
-  } 
-}
-
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email'); 
+        $this->form_validation->set_rules('username', 'username');
+        $this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
+        $this->form_validation->set_rules('role', 'role');
+    
+        if ($this->form_validation->run() == FALSE) { 
+            $this->session->set_flashdata('salah_password', 'Password harus ada 8 karakter.');
+            redirect(base_url('auth'));
+        } else {
+            $email = $this->input->post('email', true);
+            $username = $this->input->post('username', true);
+            $password = md5($this->input->post('password', true));
+            $role = $this->input->post('role', true);
+    
+            $data = [ 
+                'email' => $email, 
+                'username' => $username,
+                'password' => $password,
+                'role' => $role,
+            ]; 
+    
+            $this->m_model->tambah_data('admin', $data); 
+            $this->session->set_flashdata('berhasil_register', 'Berhasil Registrasi, Silahkan Login');
+            redirect(base_url('auth')); 
+        } 
+    }
 
  function logout() {
   $this->session->sess_destroy(); // Menggunakan sess_destroy() untuk mengakhiri sesi
