@@ -78,7 +78,7 @@
 
                 <li>
 
-                    <a href="<?php echo base_url('Login/logout'); ?>"
+                    <a type="button" onclick="confirmLogout()"
                         class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
 
                         <span class="flex-1 ml-3 whitespace-nowrap">Log Out</span>
@@ -138,6 +138,25 @@
     <br>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- LOGOUT -->
+    <script>
+        function confirmLogout() {
+            Swal.fire({
+                title: 'Yakin mau LogOut?',
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya',
+                cancelButtonText: 'Batal'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = "<?php echo base_url('/') ?>";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
