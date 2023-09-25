@@ -4,7 +4,7 @@
 <head>
   <style>
     body {
-      background-image: url("https://static.vecteezy.com/system/resources/previews/008/311/935/non_2x/the-illustration-graphic-consists-of-abstract-background-with-a-blue-gradient-dynamic-shapes-composition-eps10-perfect-for-presentation-background-website-landing-page-wallpaper-vector.jpg");
+      background-image: url("https://cutewallpaper.org/23/a-background-wallpaper-dark/2985424060.jpg");
     }
   </style>
   <meta charset="UTF-8">
