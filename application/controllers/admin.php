@@ -37,12 +37,14 @@ class Admin extends CI_Controller
         $data['guru'] = $this->m_model->get_data('guru')->result();
         $this->load->view('admin/guru', $data);
     }
+    // tambah guru
     public function tambah_guru() 
  { 
     $data['mapel'] = $this->m_model->get_data('mapel')->result(); 
   $this->load->view('admin/Tambah_guru', $data); 
  } 
   
+//  aksi tambah guru
  public function aksi_Tambah_guru() 
  { 
     $data = [ 
@@ -55,7 +57,7 @@ class Admin extends CI_Controller
     redirect(base_url('admin/guru')); 
  }
 
-
+// aksi tambah siswa
     public function aksi_tambah_siswa()
     {
         $data = [
@@ -68,12 +70,14 @@ class Admin extends CI_Controller
         $this->m_model->tambah_data('siswa', $data);
         redirect(base_url('admin/siswa'));
     }
+    //  ubah siswa
     public function ubah_siswa($id)
     {
         $data['siswa']=$this->m_model->get_by_id('siswa', 'id_siswa', $id)->result();
         $data['kelas']=$this->m_model->get_data('kelas')->result();
         $this->load->view('admin/ubah_siswa', $data);
     }
+    // aksi ubah siswa
     public function aksi_ubah_siswa()
     {
         $data = array (
@@ -95,6 +99,7 @@ class Admin extends CI_Controller
         }
     }
 
+    // ubah siswa
     public function hapus_siswa($id)
     {
         $this->m_model->delete('siswa', 'id_siswa', $id);
@@ -128,7 +133,7 @@ class Admin extends CI_Controller
 		}
 	}
 
-
+// hapus guru
     public function hapus_guru($id) 
  { 
      $this->m_model->delete('guru', 'id_guru', $id); 

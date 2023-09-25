@@ -10,15 +10,17 @@ class Auth extends CI_Controller {
   $this->load->helper('my_helper');
  }
 
+//  login
  public function index()
  {
   $this->load->view('auth/login');
  }
 
+//  aksi login
  public function aksi_login()
  {
-  $email = $this->input->post('email', true);
-  $password = $this->input->post('password', true);
+  $email = $this->input->post('email', 'Email', 'required|valid_email'); 
+  $password = $this->input->post('password', 'required|min_length[8]');
   $data = [ 'email' => $email, ];
   $query = $this->m_model->getwhere('admin', $data);
   $result = $query->row_array();
@@ -41,10 +43,12 @@ class Auth extends CI_Controller {
    redirect(base_url()."auth");
   }
 }
+// register
 public function register() { 
   $this->load->view('auth/register'); 
 } 
 
+// aksi_register
 public function aksi_register() 
     { 
         $this->load->library('form_validation'); 
@@ -77,6 +81,7 @@ public function aksi_register()
         } 
     }
 
+    // logout
  function logout() {
   $this->session->sess_destroy(); // Menggunakan sess_destroy() untuk mengakhiri sesi
   redirect(base_url('auth'));

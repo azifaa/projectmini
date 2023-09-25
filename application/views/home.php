@@ -26,9 +26,9 @@
     
     <!-- container --> 
     <div class="container text-center text-white text-bold">
-        <h1 style="text-align: center; color:white;">Welcome To School</h1> 
+        <h1 style="text-align: center; color:white;">WELCOME TO SCHOOL</h1> 
         <img src="https://binusasmg.sch.id/ppdb/logobinusa.png" alt="image" height="200px" width="200px" > 
-        <h1 sytle="">Smk Bina Nusantara</h1>
+        <h1 sytle="">SMK BINA NUSANTARA</h1>
         <h2 style="text-align: center; color:red;">Cerdas Santun Dan Berbudiluhur</h2>   
         <form action="register.php" method="post">
             <a href="./auth/register" type="submit" class="btn btn-danger text-bg-info">REGISTER</a>

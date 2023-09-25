@@ -55,8 +55,20 @@
                                 d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z" />
 
                         </svg>
-                        <span class="flex-1 ml-3 whitespace-nowrap">Daftar Siswa</span>
+                        <span class="flex-1 ml-3 whitespace-nowrap">Siswa</span>
 
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo base_url('admin/guru') ?>"
+                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+                        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                            viewBox="0 0 18 18">
+                            <path
+                                d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z" />
+                        </svg>
+                        <span class="flex-1 ml-3 whitespace-nowrap">Data Guru</span>
                     </a>
                 </li>
                 <li>
@@ -74,31 +86,21 @@
     <div class="p-4 sm:ml-64">
         <nav class="navbar bg-body-tertiary">
             <div class="container-fluid">
-                <a href="">Navbar</a>
-                <div class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Dropdown link
-                    </a>
-                    <div class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">.......</a></li>
-                        <li><a class="dropdown-item" href="#">.......</a></li>
-                        <li><a class="dropdown-item" href="#">.......</a></li>
-                    </div>
+            <div id="content" role="main"> 
+                    <div class="card-body d-flex justify-content-between align-items-center"> 
+                        <h1>Data Siswa</h1> 
+                    </div> 
                 </div>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
             </div>
         </nav>
-        <h1 class="p-4"><i>Daftar Siswa</i></h1>
         <br>
 
         <div class="row ">
             <div class="col-12 card p-2">
                 <div class="card-body min-vh-100  align-items-center">
                     <div class="card w-100 m-auto p-2">
+                        <button><a href="<?php echo base_url('admin/tambah_siswa') ?>"><button
+                                class="btn btn-sm btn-warning">Tambah</button></a>
                         <table class="table  table-striped">
                             <thead>
                                 <tr>
@@ -134,32 +136,49 @@
                                             <a href="<?php echo base_url('admin/ubah_siswa/') . $row->id_siswa ?>"
                                                 class="btn btn-sm btn-primary">Ubah</a>
                                             <button onClick="hapus (<?php echo $row->id_siswa ?>)"
-                                                class="btn btn-sm btn-danger">Delete
+                                                class="btn btn-sm btn-danger ml-3">Delete
                                             </button>
                                         </td>
                                     </tr>
                                 <?php endforeach ?>
                             </tbody>
                         </table>
-                        <a href="<?php echo base_url('admin/tambah_siswa') ?>"><button
-                                class="btn btn-sm btn-warning">Tambah</button></a>
                     </div>
                     </form>
-                    <script>
-                        function hapus(id) {
-                            var yes = confirm("Yakin Nieh Di Hapus?")
-                            if (yes === true) {
-                                window.location.href = "<?php echo base_url('admin/hapus_siswa/') ?>" + id;
-                            }
-                        }
-                    </script>
                 </div>
             </div>
-
         </div>
         <br>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script> 
+            <script> 
+            function hapus(id) { 
+                Swal.fire({ 
+                    title: 'Apakah Kamu Ingin Menghapusnya?', 
+                    icon: 'warning', 
+                    showCancelButton: true, 
+                    confirmButtonColor: '#3085d6', 
+                    cancelButtonColor: '#d33', 
+                    confirmButtonText: 'Ya, Hapus!' 
+                }).then((result) => { 
+                    if (result.isConfirmed) { 
+                        window.location.href = "<?php echo base_url('admin/hapus_siswa/') ?>" + id; 
+                    } 
+                }); 
+            } 
+            </script> 
+ 
+            <?php if($this->session->flashdata('success')): ?> 
+            <script> 
+            Swal.fire({ 
+                icon: 'success', 
+                title: '<?=$this->session->flashdata('success')?>', 
+                showConfirmButton: false, 
+                timer: 1500 
+            }); 
+            </script> 
+            <?php endif; ?>
 </body>
 
 </html>
